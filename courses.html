@@ -1,0 +1,74 @@
+<!doctype html>
+<head>
+    
+ <title>cousrese</title>
+    <link rel="stylesheet" href="chart.css">
+    <h1>courses chart</h1>
+</head>
+
+<body>
+    
+    <input type="button" value= "Addcourse"  id="hide" onclick= "openCourseForm()"/>
+    <br>
+    <a href="#" id="courseLink" >HTML</a>
+    
+<form name="forum" id="details" style="display:none">
+    
+    <table id ="details" cellspacing="20px">
+    
+    <tr> <td> Name<br></td>
+        
+   <td> <input type="text" value ="" id="name1"  /></td></tr>
+        
+      <tr> <td>Duration</td>  
+          
+      <td> <input type="text" value ="" id="name2" /></td></</tr>
+          
+    <tr> <td> Fee<br></td>
+        
+   <td> <input type="text" value ="" id="name3" /></td></tr>
+        
+     <tr>  <td> Level<br></td>  
+        
+       <td>
+           
+           <select id="level"> 
+                <option value="basic">basic</option>
+                <option value="intermediate">intermedate</option>
+                <option value="advanced">advance</option>
+                <option value="extreme">extreme</option>
+        </select>
+           </td></tr>
+            
+        <tr> <td> <input type="reset" value ="Reset" class="set" id="reset" /></td>
+    
+    
+            <td>  <input type="button" value ="submit" class="set" onclick="information()" id="click"/></td></tr>
+    </table>
+    </form>
+    <br>
+        
+        
+      <table id="charter" cellspacing="0px">
+   <tr>
+      
+   <th><input type="text" value ="Name" id="name" /> </th>
+     
+      <th> <input type="text" value ="Duration" id="dueration" /></th>
+   
+     <th> <input type="text" value ="Fee" id="fee" /></th>
+
+<th> <input type="text" value ="Level" id="level" /></th>
+       
+      
+      </tr> 
+    
+    
+    </table> 
+    
+    
+    <script src="chartjavascript.js"> </script>
+
+
+
+</body>
