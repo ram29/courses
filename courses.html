@@ -1,4 +1,5 @@
 <!doctype html>
+<html>
 <head>
     
  <title>cousrese</title>
@@ -10,7 +11,7 @@
     
     <input type="button" value= "Addcourse"  id="hide" onclick= "openCourseForm()"/>
     <br>
-    <a href="#" id="courseLink" >HTML</a>
+    
     
 <form name="forum" id="details" style="display:none">
     
@@ -38,37 +39,69 @@
                 <option value="advanced">advance</option>
                 <option value="extreme">extreme</option>
         </select>
-           </td></tr>
+           </td>
+        </tr>
+        
+        <tr>
+            <td>Courses</td>
+            <td>    
+             <select id="courses" onchangeo0="topicsList(this)"> 
+                <option value="UI" id="ui">UI</option>
+                <option value="Java" id="java" >Java</option>
+                <option value="Dotnet" id="dotnet" >Dotnet</option>
+                <option value="SQL" id="sql" >SQL</option>
+              </select>
+             </td>
+           </tr>
+        <tr>
+                <td>subtopics</td>
+                <td>
+                <select id="subtopics"> 
+                    
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
+                <option value="nodejs">NodeJs</option>
+                <option value="bootstrap">BootStrap</option>  
+                    </select>
+            </td>
+     </tr>
+         
+        <tr> 
+            <td> 
+                <input type="reset" value ="Reset" class="set" id="reset" /></td>
+    
+    
+            <td> <input type="button" value ="submit" class="set" onclick="information()" id="click"/>
             
-        <tr> <td> <input type="reset" value ="Reset" class="set" id="reset" /></td>
+        </td>
+    </tr>
+ </table>
+</form>
     
-    
-            <td>  <input type="button" value ="submit" class="set" onclick="information()" id="click"/></td></tr>
-    </table>
-    </form>
     <br>
-        
-        
+    
       <table id="charter" cellspacing="0px">
-   <tr>
-      
-   <th><input type="text" value ="Name" id="name" /> </th>
+          
+          
+   <tr> 
+       <th><input type="text" value ="Name" id="name" /> </th>
      
       <th> <input type="text" value ="Duration" id="dueration" /></th>
    
      <th> <input type="text" value ="Fee" id="fee" /></th>
 
-<th> <input type="text" value ="Level" id="level" /></th>
+     <th><input type="text" value ="Level" id="level" /></th>
        
+     <th><input type="text" value ="Courses" id="coursesList" /></th>   
+       
+     <th> <input type="text" value ="subtopics" id="coursesList" /></th>  
       
-      </tr> 
-    
-    
-    </table> 
+ </tr> 
+</table> 
     
     
     <script src="chartjavascript.js"> </script>
 
-
-
 </body>
+</html>

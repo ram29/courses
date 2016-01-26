@@ -58,3 +58,35 @@ h1{
     font color: bisque;
     width:inherit;
 }
+ul{
+    list-style:none;
+    display: inline-block;
+    padding-left: ;
+        
+}
+#courses{
+    background-repeat:repeat-x;
+      border: 2px solid;
+      height:25px;
+      width:125px;
+      padding-left:8px;
+      border-radius: 3px;
+        
+}
+#level{
+     background-repeat:repeat-x;
+      border: 2px solid;
+      height:25px;
+      width:125px;
+      padding-left:8px;
+      border-radius: 3px;
+    
+}
+#subtopics{
+     background-repeat:repeat-x;
+      border: 2px solid;
+      height:25px;
+      width:125px;
+      padding-left:8px;
+      border-radius: 3px;
+}

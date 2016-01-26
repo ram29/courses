@@ -5,14 +5,21 @@ function information(){
     var td2= document.createElement("td");
     var td3= document.createElement("td");
     var td4= document.createElement("td");
+    var td5= document.createElement("td");
+    var td6 = document.createElement("td");
+    
     var table = document.getElementById("charter");
+    
+    //appending rows and cells
+    
     table.appendChild(tr);
+    
     var name=  document.getElementById("name1").value;
     
-    td1.innerHTML= '<a href="topics.html?courseName='+ name+'">'+name+'</a>';
+    td1.innerHTML= name;
     
     tr.appendChild(td1);
-    console.log(td1);
+    
     
      td2.innerHTML= document.getElementById("name2").value;
      tr.appendChild(td2);
@@ -21,12 +28,27 @@ function information(){
      tr.appendChild(td3);
     
     
-    
+    //selectoption for level
+        
     var choose = document.getElementById("level");
  
     var option  = choose.options[choose.selectedIndex].text;
     td4.innerHTML= option;
     tr.appendChild(td4);
+    
+    //select options for courses
+    
+    var select = document.getElementById("courses");
+    var courseslist  = select.options[select.selectedIndex].text;
+    td5.innerHTML= '<a href="topics.html?courseName='+ courseslist+'">'+courseslist+'</a>' ;
+    tr.appendChild(td5);
+    
+    // select options for cubtopics
+    
+    var select = document.getElementById("subtopics");
+    var subtopicslist  = select.options[select.selectedIndex].text;
+    td6.innerHTML= '<a href="topics.html?courseName='+ subtopicslist+'">'+subtopicslist+'</a>' ;
+    tr.appendChild(td6);
     
     showResults();
   
@@ -51,3 +73,42 @@ function showResults(){
     
     
 }
+
+// selcting courselist using javascript
+
+var ui= ["html","css","javascript","angularjs","nodejs" ] 
+
+var java = ["springs","hybernate","struts","jsp"]
+
+var dotnet= [ "c#","dotnet","asp.net"]
+
+var sql =["sql","oraclesql"]
+
+function topicsList(topics){
+        
+    switch (topics.value){
+        case "UI":
+            createOptions(ui);
+            break;
+        case "Java":
+            createOptions(java);
+            break;
+        case "Dotnet":
+            createOptions(dotnet);
+            break;
+        case "SQL":
+            createOptions(sql); 
+            break;
+            }
+    function createOptions(index){
+        subtopics.options.length = 0;
+        for(var i=0;i<index.length;i++)
+            
+            {
+                var select = document.createElement("option");
+                select.value= index[i];
+                select.text = index[i];
+                subtopics.appendChild(select);
+            }
+        }
+    }   
