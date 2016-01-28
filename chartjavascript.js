@@ -48,6 +48,7 @@ function information(){
     var select = document.getElementById("subtopics");
     var subtopicslist  = select.options[select.selectedIndex].text;
     td6.innerHTML= '<a href="topics.html?courseName='+ subtopicslist+'">'+subtopicslist+'</a>' ;
+    
     tr.appendChild(td6);
     
     showResults();
@@ -109,6 +110,35 @@ function topicsList(topics){
                 select.value= index[i];
                 select.text = index[i];
                 subtopics.appendChild(select);
-            }
-        }
+            
+                }
+    
     }   
+}
+/*function topicslist(subtopics){
+    switch (subtopics.value){
+        case "UI":
+            createOptions(ui);
+            break;
+        case "Java":
+            createOptions(java);
+            break;
+        case "Dotnet":
+            createOptions(dotnet);
+            break;
+        case "SQL":
+            createOptions(sql); 
+            break;
+            }
+    function createOptions(list){
+        
+//subtopics.li.length=0;
+         for(var i=0;i<list.length;i++)
+             {
+                 var ul= document.createElement("li");
+                 ul.value = list[i];
+                 ul.text= list[i];
+                 subtopics.appendChild(ul);
+             }
+    }*/
+    
