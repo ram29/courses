@@ -1,0 +1,10 @@
+{"course":[
+    {"Name": "ram","dueration":"100days" , "fee": "200" ,"Level":"advance", "courses" : "UI" ,"subtopics" : "UI"  },
+    
+    {"Name": "ram","dueration":"100days" , "fee": "200", "Level":"advance" , "courses" : "Java" ,"subtopics" : "Java" },
+    
+    {"Name": "ram", "dueration":"100days","fee": "200" ,"Level":"advance","courses" : "Dotnet", "subtopics" : "Dotnet"},
+    
+    {"Name": "ram", "dueration":"100days" , "fee": "200","Level":"advance", "courses" : "SQL","subtopics" : "SQL"}
+]
+}

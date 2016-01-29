@@ -115,30 +115,46 @@ function topicsList(topics){
     
     }   
 }
-/*function topicslist(subtopics){
-    switch (subtopics.value){
-        case "UI":
-            createOptions(ui);
-            break;
-        case "Java":
-            createOptions(java);
-            break;
-        case "Dotnet":
-            createOptions(dotnet);
-            break;
-        case "SQL":
-            createOptions(sql); 
-            break;
-            }
-    function createOptions(list){
-        
-//subtopics.li.length=0;
-         for(var i=0;i<list.length;i++)
-             {
-                 var ul= document.createElement("li");
-                 ul.value = list[i];
-                 ul.text= list[i];
-                 subtopics.appendChild(ul);
-             }
-    }*/
+
+ 
+window.onload = function(){
+    var getTableData = new XMLHttpRequest();
+
+    getTableData.onreadystatechange = function() {
+        //checking for when response is received from server
+        if(getTableData.readyState === 4 && getTableData.status == 200) {
+            var tableInfo     = JSON.parse(getTableData.responseText);
+            console.log(getTableData);
+               jsonObjects(tableInfo); 
+        }
+    };
+    
+                
+getTableData.open("GET", "topics.json", true);
+  getTableData.send();
+ }
+
+function jsonObjects(list){
+    
+    var newTable = document.getElementById("charter");
+            
+    for (var i in list.course){
+        var obj = list.course[i];
+        var tr = document.createElement("tr");
+    
+        for(var j in obj){
+            var subobj = obj[j];
+            var td = document.createElement("td");
+            td.innerHTML = subobj;
+            tr.appendChild(td);
+        }
+        newTable.appendChild(tr);
+    }
+}
+
+                  
+                
+                   
+                   
+               
     
