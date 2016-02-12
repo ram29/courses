@@ -1,107 +1,139 @@
 <!doctype html>
 <html>
+    
 <head>
     
- <title>cousrese</title>
-    <link rel="stylesheet" href="chart.css">
-    <h1>courses chart</h1>
+     <title>cousrese</title>
+        
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+     
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+     
+     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      
+    
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+      
 </head>
 
 <body>
-    
-    <input type="button" value= "Addcourse"  id="hide" onclick= "openCourseForm()"/>
-    <br>
-    
-    
-<form name="forum" id="details" style="display:none">
-    
-    <table id ="details" cellspacing="20px">
-    
-    <tr> <td> Name<br></td>
+    <div class="container">
+        <div class="bg-primary">
         
-   <td> <input type="text" value ="" id="name1"  /></td></tr>
+          <h1 >courses chart</h1>
+            
+       </div>
+        <br>
+     <input type="button" value= "Addcourse" class="btn btn-success" id="hide" onclick= "openCourseForm()"/>
+      <br>
+    
+<div  class="table">
+    
+    <form name="forum" id="details" style="display:none">
+    
+        <table id ="details" cellspacing="20px"  class="table">
+    
+          <tr> <td> Name<br></td>
         
-      <tr> <td>Duration</td>  
+            <td> <input type="text" value ="" id="name1"  /></td></tr>
+        
+         <tr><td>Duration</td>  
           
-      <td> <input type="text" value ="" id="name2" /></td></</tr>
+            <td> <input type="text" value ="" id="name2" /></td></tr>
           
-    <tr> <td> Fee<br></td>
+       <tr> <td> Fee<br></td>
         
-   <td> <input type="text" value ="" id="name3" /></td></tr>
+            <td> <input type="text" value ="" id="name3" /></td></tr>
         
-     <tr>  <td> Level<br></td>  
+       <tr><td> Level<br></td>  
         
-       <td>
+           <td>
            
-           <select id="level"> 
+             <select id="level" class=" btn btn-primary dropdown-toggle"> 
                 <option value="basic">basic</option>
                 <option value="intermediate">intermedate</option>
                 <option value="advanced">advance</option>
                 <option value="extreme">extreme</option>
-        </select>
-           </td>
-        </tr>
-        
-        <tr>
-            <td>Courses</td>
-            <td>    
-             <select id="courses" onchange="topicsList(this)"> 
-                <option value="UI" id="ui">UI</option>
-                <option value="Java" id="java" >Java</option>
-                <option value="Dotnet" id="dotnet" >Dotnet</option>
-                <option value="SQL" id="sql" >SQL</option>
-              </select>
-             </td>
-           </tr>
-        <tr>
-                <td>subtopics</td>
-                <td>
-                <select id="subtopics"> 
-                    
-                <option value="html">HTML</option>
-                <option value="css">CSS</option>
-                <option value="javascript">JavaScript</option>
-                <option value="nodejs">NodeJs</option>
-                <option value="bootstrap">BootStrap</option>  
-                    </select>
-            </td>
-     </tr>
-         
-        <tr> 
-            <td> 
-                <input type="reset" value ="Reset" class="set" id="reset" /></td>
-    
-    
-            <td> <input type="button" value ="submit" class="set" onclick="information()" id="click"/>
-            
+            </select>
         </td>
-    </tr>
- </table>
+   </tr>
+        
+   <tr>
+            <td>Courses</td>
+       
+            <td>    
+                 <select id="course" onchange="topicsList(this)" class="btn btn-primary dropdown-toggle"> 
+                    <option value="UI" id="ui">UI</option>
+                    <option value="Java" id="java" >Java</option>
+                    <option value="Dotnet" id="dotnet" >Dotnet</option>
+                    <option value="SQL" id="sql" >SQL</option>
+                </select>
+           </td>
+  </tr>
+            
+   <tr>
+           <td>subtopics</td>
+        
+            <td>
+            
+                <select id="subtopics" class="btn btn-primary dropdown-toggle"> 
+                    
+                  <option value="html">HTML</option>
+                  <option value="css">CSS</option>
+                  <option value="javascript">JavaScript</option>
+                  <option value="nodejs">NodeJs</option>
+                  <option value="bootstrap">BootStrap</option>  
+                </select>
+                
+          </td>
+   </tr> 
+            
+   <tr> 
+           <td><input type="reset" value ="Reset" class="set" id="reset" /></td>
+    
+    
+           <td><input type="button" value ="submit" class="set" onclick="information()" id="click"/>
+            
+          </td>
+  </tr>
+            
+</table>
+        
 </form>
     
+   </div> 
     <br>
     
-      <table id="charter" cellspacing="0px">
+    <table id="charter" cellspacing="0px" class="table-bordered">
           
           
-   <tr> 
-       <th><input type="text" value ="Name" id="name" /> </th>
+       <tr class="success"> 
+           
+          <th><input type="text" value ="courseid" id="name" class="success"/> </th>
      
-      <th> <input type="text" value ="Duration" id="dueration" /></th>
+          <th> <input type="text" value ="name" id="dueration" class="success"/></th>
    
-     <th> <input type="text" value ="Fee" id="fee" /></th>
+          <th> <input type="text" value ="discription" id="fee" class="success"/></th>
 
-     <th><input type="text" value ="Level" id="level" /></th>
+          <th><input type="text" value ="duration" id="level" class="success" /></th>
        
-     <th><input type="text" value ="Courses" id="coursesList" /></th>   
+          <th><input type="text" value ="Courses" id="coursesList" class="success"/></th>   
        
-     <th> <input type="text" value ="subtopics" id="coursesList" /></th>  
+          <th> <input type="text" value ="subtopics" id="coursesList" class="success"/></th>  
       
- </tr> 
-</table> 
+      </tr> 
+             
+   </table> 
+        
     
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
     
-    <script src="chartjavascript.js"> </script>
+<script src="chartjavascript.js"> </script>
+        
+  </div>
 
 </body>
+    
 </html>

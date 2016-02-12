@@ -116,8 +116,58 @@ function topicsList(topics){
     }   
 }
 
- 
 window.onload = function(){
+    var getTableData = new XMLHttpRequest();
+
+    getTableData.onreadystatechange = function() {
+        //checking for when response is received from server
+        if(getTableData.readyState === 4 && getTableData.status == 200) {
+            var tableInfo     = JSON.parse(getTableData.responseText);
+            console.log(getTableData);
+               coursesObjects(tableInfo); 
+        }
+    };
+    
+                
+getTableData.open("GET", "http://localhost:10000/courses", true);
+  getTableData.send();
+ }
+
+function coursesObjects(list){
+    
+    var newTable = document.getElementById("charter");
+            
+    for (var i in list){
+        var obj = list[i];
+       var courseid = list[i]["courseid"];
+        var tr = document.createElement("tr");
+    
+        for(var j in obj){
+            var subobj = obj[j];
+            var td = document.createElement("td");
+            
+           if (i==="name") {
+                             
+            td.innerHTML=  '<a href="http://localhost:10000/courses/">'+obj[j]+'</a>';
+                                               
+           };
+                                
+            td.innerHTML = obj[j];
+            tr.appendChild(td);
+            
+        }
+        newTable.appendChild(tr);
+    }
+};
+
+
+
+
+
+
+
+ 
+/*window.onload = function(){
     var getTableData = new XMLHttpRequest();
 
     getTableData.onreadystatechange = function() {
@@ -150,9 +200,62 @@ function jsonObjects(list){
         }
         newTable.appendChild(tr);
     }
-}
+}*/
 
-                  
+
+/*$(document).ready(function(){
+    
+      $.ajax({
+               method: "GET",
+               url: "topics.json",
+               processData: "success",
+               dataType: "json"
+            });
+        
+               
+    var data = $.getJSON("topics.json",function(json){
+        
+    console.log(json);
+        
+      for (var i in json.course){
+        var obj = json.course[i];  
+          var tr = $('<tr />');
+                    
+           for( var j in obj){
+            var subobj = obj[j];
+            var td = $('<td />');
+               td.html= subobj;
+               tr.append()
+             }
+           $("#charter").append(tr);
+          
+          }
+      });
+    });*/
+ 
+          
+        
+        
+   //  $.each( json, function(course, value ) {
+      //   var obj = course.json(value);
+       //  var tr = $.<tr/>
+        //    $.each ( course)
+       
+             // var obj = 
+      
+             // $("#charter").append(value );
+         // console.log(value);
+              
+        //$.each(data,fucntion(j,value){
+             //  $()
+               
+                     
+        
+        
+                
+       
+
+
                 
                    
                    
