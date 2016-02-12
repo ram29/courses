@@ -38,7 +38,7 @@ function information(){
     
     //select options for courses
     
-    var select = document.getElementById("courses");
+    var select = document.getElementById("course");
     var courseslist  = select.options[select.selectedIndex].text;
     td5.innerHTML= '<a href="topics.html?courseName='+ courseslist+'">'+courseslist+'</a>' ;
     tr.appendChild(td5);
@@ -139,25 +139,28 @@ function coursesObjects(list){
             
     for (var i in list){
         var obj = list[i];
-       var courseid = list[i]["courseid"];
+      // var courseid = list[i]["courseid"];
         var tr = document.createElement("tr");
     
         for(var j in obj){
             var subobj = obj[j];
             var td = document.createElement("td");
             
-           if (i==="name") {
+           //if (j==="name") {
                              
-            td.innerHTML=  '<a href="http://localhost:10000/courses/">'+obj[j]+'</a>';
+           // td.innerHTML=  '<a href="http://localhost:10000/courses ='+ obj[j]+'">'+obj[j]+'</a>'
                                                
-           };
+         //  };
                                 
-            td.innerHTML = obj[j];
-            tr.appendChild(td);
+            td.innerHTML =  '<a href="http://localhost:10000/topics" ='+ obj[j]+'">'+obj[j]+'</a>';
+           // tr.appendChild(td);
             
-        }
-        newTable.appendChild(tr);
+        
+            tr.appendChild(td);
+            newTable.appendChild(tr);
     }
+
+}
 };
 
 

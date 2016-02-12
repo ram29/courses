@@ -7,22 +7,22 @@ var express= require("express");
 var app = express();
 
 
-/*k
+
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
-});*/
+});
 
 // this is for the delete
 
 
-app.delete('/courses', function (req, res) {
+/*app.delete('/courses', function (req, res) {
     var name = req.query.name;
     
      mssql.connect("mssql://belluser:rammalle@localhost/courses").then(function(){
     //query
-    new mssql.Request().query("delete from  courses  where name = ('linux')" ).then(function(recordset){
+    new mssql.Request().query("delete from  courses  where name = ('ui')" ).then(function(recordset){
             
     res.send('recordset');
     
@@ -46,9 +46,10 @@ app.listen(10000,function(){
 
 
 
+
 // this for the post
 
- /* app.post('/courses',function(req,res){
+  app.post('/courses',function(req,res){
     var name = req.query.name;
     
     //res.end(name);
@@ -75,11 +76,11 @@ app.listen(10000,function(){
     
     console.log("running on port 10000");
 });
-*/
+
 
 // this for inner join tables 
 
-/*app.get('/courses/:courseid/topics',function(req,res){
+app.get('/courses/:courseid/topics',function(req,res){
             
   mssql.connect("mssql://belluser:rammalle@localhost/courses").then(function(){
     //query
@@ -105,7 +106,7 @@ app.listen(10000, function(){
 });
 
 
-    // this is for course_topics table 
+    this is for course_topics table 
     
 app.get('/course_topics',function(req,res){
           
@@ -133,7 +134,7 @@ app.listen(10000, function(){
 
 // this is for the courses
 
-/*app.get('/courses',function(req,res){
+app.get('/courses',function(req,res){
           
 mssql.connect("mssql://belluser:rammalle@localhost/courses").then(function(){
     //query
@@ -151,11 +152,38 @@ mssql.connect("mssql://belluser:rammalle@localhost/courses").then(function(){
 	});
 });
 
-app.listen(10000, function(){
+app.listen(9000, function(){
     
     console.log("server running on port 10000");
 });
 
+// this is for the topics 
+
+
+app.get('/topics',function(req,res){
+          
+mssql.connect("mssql://belluser:rammalle@localhost/courses").then(function(){
+    //query
+   // new mssql.Request().query("SELECT name FROM topics GROUP BY name HAVING MAX(topicsid) = 8 AND MIN(topicsid) = 1" ).then(function(recordset){
+         
+    new mssql.Request().query("SELECT name FROM topics" ).then(function(recordset){
+    res.end(JSON.stringify(recordset));
+        console.log('recordset')
+    
+   }).catch(function(err) {
+		console.log(err.message); 
+});
+    
+}).catch(function(err) {
+		console.log("err.message"); 
+    
+	});
+});
+
+app.listen(10000, function(){
+    
+    console.log("server running on port 10000");
+});
 
 
 
